@@ -25,9 +25,6 @@ This repository contains a collection of MARIE assembly language programs, writt
 - **Multiplication Calculator.txt**  
   Multiplies two numbers using iterative addition and handles negative numbers.
 
-- **Recursive QuickSort.txt**  
-  Implements the QuickSort algorithm recursively, demonstrating advanced stack and memory management.
-
 - **Sum5Nums.txt**  
   Sums five numbers stored in memory.
 
