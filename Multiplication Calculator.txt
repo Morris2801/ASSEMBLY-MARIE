@@ -1,71 +1,69 @@
-/ Mauricio Emilio Monroy González - A01029647
+/ Calculadora de Multiplicación en MARIE
+/ Autor: Mauricio Emilio Monroy González - A01029647
 
-/ Multiplication Calculator
-/ by the MARIE.js Team
-/ Copyright (C) 2016. Licensed under the MIT License
 
-/ Prompt user to type in integers
+/ Solicita al usuario dos números enteros
 Clear
-Store result
-Input
-Store X
-Input
-Store Y
+Store resultado
+Input           / Ingresa el primer número
+Store multiplicando
+Input           / Ingresa el segundo número
+Store multiplicador
 
-/ check if Y is negative, if -ve negate Y and set negative flag
-Load Y
-Skipcond 000
-Jump nonneg
+/ Verifica si el multiplicador es negativo
+Load multiplicador
+Skipcond 000    / Si es negativo, salta a negacion
+Jump noNegativo
 
-Subt Y
-Subt Y
-Store Y
+/ Si es negativo, lo convierte a positivo y activa la bandera de negativo
+Subt multiplicador
+Subt multiplicador
+Store multiplicador
 Clear
-Add one
-Store negflag
+Add uno
+Store banderaNegativo
 Clear
-Jump loop
+Jump ciclo
 
-nonneg,  Clear
-         Store negflag
-         / check if Y is zero, if it is, then we jump to halt
-         Load Y
-         Skipcond 400
-         Jump loop / false
-         Jump halt / true
+noNegativo, Clear
+            Store banderaNegativa
+            / Verifica si el multiplicador es cero, si es así termina
+            Load multiplicador
+            Skipcond 400
+            Jump ciclo      / Si no es cero, continúa al ciclo
+            Jump fin        / Si es cero, termina
 
-/ Loop for performing iterative addition
-loop,    Load result
-         Add X
-         Store result
+/ Ciclo de suma iterativa para multiplicar
+ciclo,   Load resultado
+         Add multiplicando
+         Store resultado
 
-         Load Y
-         Subt one
-         Store Y
-	
-         Skipcond 400 / have we completed the multiplication?
-         Jump loop / no; repeat loop
-         / yes, so exit the loop
+         Load multiplicador
+         Subt uno
+         Store multiplicador
 
-/ check for negative flag, if it is set, negate the result
-Load negflag
+         Skipcond 400      / ¿Ya terminamos la multiplicación?
+         Jump ciclo        / No, repite el ciclo
+
+/ Si la bandera de negativo está activa, niega el resultado
+Load banderaNegativa
 Skipcond 800
-Jump halt
+Jump fin
 
-/ negate result
-Load result
-Subt result
-Subt result
-Store result
-/ run the next three instructions, which halts the program
+/ Negar el resultado
+Load resultado
+Subt resultado
+Subt resultado
+Store resultado
 
-/ Output result to user then halt program
-halt,    Load result
-         Output	
-         Halt
+/ Muestra el resultado y termina el programa
+fin,    Load resultado
+        Output
+        Halt
 
-X, DEC 0
-Y, DEC 0
-one, DEC 1
-negflag, DEC 0
-result, DEC 0
+/ Variables
+multiplicando, DEC 0
+multiplicador, DEC 0
+uno,           DEC 1
+banderaNegativa, DEC 0
+resultado,     DEC 0
