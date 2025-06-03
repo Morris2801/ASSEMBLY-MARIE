@@ -1,0 +1,25 @@
+/ Mauricio Emilio Monroy González - A01029647
+
+/ Loop para sumar 5 numeros
+Load Addr
+Store Next
+Load Num
+Subt One
+Store Ctr
+Clear
+Loop, Load Sum
+      AddI Next 
+      Add One
+      Store Next
+      Load Ctr
+      Subt One
+      Store Ctr
+      Skipcond 000
+      Jump Loop
+      Halt
+Addr, HEX 118
+Next, HEX 0
+Num, DEC 5
+Sum, DEC 0
+Ctr, DEC 0
+One, DEC 1

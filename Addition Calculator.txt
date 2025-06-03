@@ -1,0 +1,13 @@
+/ Mauricio Emilio Monroy González - A01029647
+
+Input
+Store A
+Input 
+Store B
+
+Add A
+Output
+Halt
+
+A, DEC 0
+B, DEC 0

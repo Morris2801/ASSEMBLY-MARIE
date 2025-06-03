@@ -1,0 +1,68 @@
+/ Mauricio Emilio Monroy González - A01029647
+
+/ Programa que invierte 4 localidades de memoria
+Input 
+Store A / Para verificar, parece que A = mem[30+A]
+Input 
+Store B / Para verificar, parece que B = mem[30+B]
+Input
+Store C / Para verificar, parece que A = mem[30+C]
+Input
+Store D / Para verificar, parece que A = mem[30+D]
+/ ABCD -> DBCA
+    Load posicion 
+    Add apuntador
+    Store apuntador / apuntador = dir
+    LoadI apuntador
+    Store temp1 / temp1 = m[dir]
+    Load apuntador
+    Add tres
+    Store apuntador / apuntador = dir + 3
+    LoadI apuntador
+    Store temp2  / temp2 = m[dir+3]
+    Load apuntador
+    Subt tres
+    Store apuntador / apuntador = dir + 0
+    Load temp2
+    StoreI apuntador / temp2 @ dir + 0
+    Load apuntador
+    Add tres
+    Store apuntador / apuntador = dir + 3
+    Load temp1
+    StoreI apuntador / temp1 @ dir + 3
+    / DBCA -> DCBA 
+    Load apuntador
+    Subt dos
+    Store apuntador / apuntador = dir + 1
+    LoadI apuntador
+    Store temp1  / temp1 = m[dir+1] 
+    Load apuntador
+    Add uno
+    Store apuntador / apuntador = dir + 2
+    LoadI apuntador
+    Store temp2 / temp2 = m[dir+ 2]
+    Load apuntador
+    Subt uno
+    Store apuntador / apuntador = dir + 1
+    Load temp2
+    StoreI apuntador / temp2 @ dir + 1
+    Load apuntador
+    Add uno
+    Store apuntador / apuntador = dir + 2
+    Load temp1
+    StoreI apuntador / temp1 @ dir + 2
+    Halt
+temp1, DEC 0
+temp2, DEC 0
+apuntador, DEC 0
+direccion, DEC 0
+zero, DEC 0
+uno, DEC 1
+dos, DEC 2
+tres, DEC 3 
+cuatro, DEC 4
+A, DEC 0
+B, DEC 0
+C, DEC 0
+D, DEC 0
+posicion, ADR A

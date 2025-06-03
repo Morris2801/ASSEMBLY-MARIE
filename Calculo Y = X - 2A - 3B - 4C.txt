@@ -1,0 +1,54 @@
+/ Mauricio Emilio Monroy González - A01029647
+
+/ Calculo de: Y = X - 2A - 3B - 4C
+Input 
+Store X
+Input 
+Store A
+Input
+Store B
+Input 
+Store C
+TwoA, Load A / Subrutina para 2A
+		Add tot2
+		Store tot2
+		Load two
+		Subt one
+		Store two
+		Skipcond 400 / Repetir loop?
+		Jump TwoA
+ThreeB, Load B
+		Add tot3
+		Store tot3
+		Load three
+		Subt one
+		Store three
+		Skipcond 400 / Repetir loop?
+		Jump ThreeB
+FourC, Load C
+		Add tot4
+		Store tot4
+		Load four
+		Subt one
+		Store four
+		Skipcond 400 / Repetir loop?
+		Jump FourC
+Sum, Load X / Acumular subtotales
+		Subt tot2
+		Subt tot3
+		Subt tot4
+		Store Y 
+		Output
+		Halt
+X, DEC 0
+A, DEC 0
+B, DEC 0
+C, DEC 0
+one, DEC 1
+two, DEC 2
+three, DEC 3
+four, DEC 4
+tot2, DEC 0
+tot3, DEC 0
+tot4, DEC 0
+Y, DEC 0

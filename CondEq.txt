@@ -1,0 +1,21 @@
+/ Mauricio Emilio Monroy González - A01029647
+
+/ Ilustración de IF X = Y -> X: = X * 2; ELSE Y: = Y – X
+If, Load X
+Subt Y
+   	Skipcond 400
+    	Jump Else
+Then, Load X
+	Add X
+Store X
+    	Jump EndIf
+Else, Load Y 
+Subt X
+     	Store Y
+EndIf, Load X 
+	Output
+	Load Y
+    	Output
+	Halt
+X, DEC 12
+Y, DEC 20

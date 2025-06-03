@@ -1,0 +1,24 @@
+/ Mauricio Emilio Monroy González - A01029647
+
+/ Duplicar valor de un numero
+Load X
+Store Temp
+JnS Subr
+Store X
+Load Y
+Store Temp
+JnS Subr
+Store Y
+Load X
+Output
+Load Y 
+Output
+Halt
+X, DEC 20
+Y, DEC 48
+Temp, DEC 0
+Subr, HEX 0
+	Clear
+ 	Load Temp
+    	Add Temp
+    			JumpI Subr

@@ -1,0 +1,31 @@
+/ Mauricio Emilio Monroy González - A01029647
+
+/ Longitud de String
+otro, LoadI dirmensaje
+	Store temp
+	Subt zero
+	Skipcond 400
+	Jump sigue
+	Load longitud / ac = 0
+	Output
+	Halt
+sigue, Load dirmensaje
+	  Add uno
+        Store dirmensaje
+        Load longitud
+	  Add uno
+        Store longitud
+	  Jump otro
+longitud, DEC 0
+temp, DEC 0
+uno, DEC 1
+zero, DEC 0
+contador, DEC 0
+apuntador, DEC 0
+dirmensaje, ADR mensaje / guardar en dirmensaje direccion de mensaje
+mensaje, DEC 70 /F
+	DEC 117 /U 
+     	DEC 101 /E
+    	DEC 114 /R
+    	DEC 97 / A
+    	DEC 0 / NULL
