@@ -47,10 +47,10 @@ This repository contains a collection of MARIE assembly language programs, writt
   Direct and indirect addressing, storing and loading values, and manipulating pointers for advanced algorithms.
 
 - **Subroutines:**  
-  Use of `JnS` (Jump and Store) for calling subroutines, as seen in multiplication and recursive QuickSort.
+  Use of `JnS` (Jump and Store) for calling subroutines, as seen in multiplication.
 
 - **Stack Usage:**  
-  Manual stack management for recursive algorithms and local variable storage (notably in QuickSort).
+  Manual stack management for recursive algorithms and local variable storage.
 
 
 
@@ -59,5 +59,5 @@ This repository contains a collection of MARIE assembly language programs, writt
 These programs are intended for use with the [MARIE Simulator](https://www.marietools.com/) or any compatible MARIE assembly environment.  
 To run a program:
 1. Open the `.txt` file in your MARIE simulator.
-2. Assemble and run the program.
+2. Copypaste, Assemble and run the program.
 3. Follow the on-screen prompts for input and observe the output.
